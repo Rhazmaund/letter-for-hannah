@@ -49,8 +49,6 @@ yesBtn.addEventListener("click", () => {
                 I just wanted to tell you that you are
                 someone very special to me. ❤️
                 <br><br>
-
-                (Dito mo ilalagay yung buong letter mo)
             </p>
         </div>
     `;
