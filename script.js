@@ -19,7 +19,7 @@ if(openLetter){
     });
 }
 
-// YES button
+// YES BUTTON
 yesBtn.addEventListener("click", () => {
 
     if(!noClicked){
@@ -27,7 +27,7 @@ yesBtn.addEventListener("click", () => {
         return;
     }
 
-    // Letter page
+    // LETTER PAGE
     document.body.innerHTML = `
         <div style="
             height:100vh;
@@ -56,7 +56,7 @@ yesBtn.addEventListener("click", () => {
     `;
 });
 
-// NO button
+// NO BUTTON
 function moveNoButton(){
 
     noClicked = true;
@@ -75,9 +75,14 @@ function moveNoButton(){
     noBtn.style.top = y + "px";
 }
 
-noBtn.addEventListener("mouseenter", moveNoButton);
-
+// CLICK LANG ANG PAG-IWAS
 noBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    moveNoButton();
+});
+
+// MOBILE SUPPORT
+noBtn.addEventListener("touchstart", (e) => {
     e.preventDefault();
     moveNoButton();
 });
