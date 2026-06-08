@@ -1,0 +1,242 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:monospace;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffd6e7;
+}
+
+.window{
+    width:500px;
+    border:6px solid #ff6b81;
+    background:#ffeaf3;
+}
+
+.title-bar{
+    background:#ffb6c1;
+    color:#d63031;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.content{
+    padding:40px;
+    text-align:center;
+}
+
+h2{
+    margin-bottom:20px;
+    color:#444;
+}
+
+#envelopePage{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffd6e7;
+    z-index:9999;
+}
+
+/* Main Envelope */
+.envelope{
+    position:relative;
+    width:700px;
+    height:450px;
+    background:#fff;
+    border:6px solid #ff6b81;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+/* Top Flap */
+.envelope::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:0;
+    border-left:350px solid transparent;
+    border-right:350px solid transparent;
+    border-top:220px solid #ffb6c1;
+}
+
+/* Heart Seal */
+.heart{
+    position:absolute;
+    top:55%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    font-size:80px;
+    cursor:pointer;
+    transition:0.3s ease;
+    z-index:10;
+}
+
+.heart:hover{
+    transform:translate(-50%, -50%) scale(1.2);
+}
+
+/* Text */
+.letter-text{
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:24px;
+    color:#ff4d6d;
+    font-weight:bold;
+    text-align:center;
+}
+
+/* Floating Animation */
+@keyframes float{
+    0%{
+        transform:translate(-50%, -50%);
+    }
+    50%{
+        transform:translate(-50%, -60%);
+    }
+    100%{
+        transform:translate(-50%, -50%);
+    }
+}
+
+.heart{
+    animation:float 2s ease-in-out infinite;
+}
+
+.heart{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:45px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.heart:hover{
+    transform:translate(-50%,-50%) scale(1.2);
+}
+
+.letter-text{
+    position:absolute;
+    bottom:-35px;
+    width:100%;
+    text-align:center;
+    color:#ff4d6d;
+}
+
+.Hannah{
+    width:145px;
+    height:145px;
+    object-fit:cover;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+}
+
+button{
+    padding:12px 30px;
+    border:3px solid #ff6b81;
+    background:white;
+    color:#ff6b81;
+    font-size:18px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s ease;
+}
+
+#yesBtn:hover{
+    transform:scale(1.1);
+}
+
+#yesBtn,
+#noBtn{
+    padding:12px 30px;
+}
+
+#warning{
+    margin-top:15px;
+    color:#ff4d6d;
+    font-size:14px;
+    font-weight:bold;
+}
+
+@media screen and (max-width: 768px){
+
+    .window{
+        width:90%;
+        margin:20px;
+    }
+
+    .title-bar{
+        font-size:18px;
+        padding:10px;
+    }
+
+    .content{
+        padding:20px;
+    }
+
+    .Hannah{
+        width:120px;
+        height:120px;
+    }
+
+    h2{
+        font-size:18px;
+    }
+
+    .buttons{
+        gap:10px;
+        flex-wrap:wrap;
+    }
+
+    button{
+        padding:10px 20px;
+        font-size:16px;
+    }
+
+    .envelope{
+        width:90%;
+        height:300px;
+    }
+
+    .envelope::before{
+        border-left:45vw solid transparent;
+        border-right:45vw solid transparent;
+        border-top:150px solid #ffb6c1;
+    }
+
+    .heart{
+        font-size:60px;
+    }
+
+    .letter-text{
+        font-size:18px;
+        bottom:20px;
+    }
+}
