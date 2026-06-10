@@ -22,35 +22,47 @@ if(openLetter){
 // YES BUTTON
 yesBtn.addEventListener("click", () => {
 
-    if(!noClicked){
-        warning.textContent = "❗ Click NO first!";
-        return;
-    }
-
-    // LETTER PAGE
     document.body.innerHTML = `
-        <div style="
-            height:100vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            flex-direction:column;
-            background:#ffd6e7;
-            text-align:center;
-            padding:20px;
-            font-family:monospace;
-        ">
-            <h1>💌 For Hannah 💌</h1>
+    <div class="love-window">
+
+        <div class="love-title">
+            <span>HANNAH</span>
+
+            <div class="pixel-hearts">
+                ❤ • ❤ • ❤
+            </div>
+        </div>
+
+        <div class="love-content">
+
+            <h2>My Love,</h2>
 
             <p>
-                Dear Hannah,<br><br>
+                Dear Hannah,
 
-                Thank you for taking the time to read this.
-                I just wanted to tell you that you are
-                someone very special to me. ❤️
-                <br><br>
+                Thank you for taking the time to read this letter.
+                I just wanted you to know how special you are to me.
+
+                Every day you make my life brighter, happier,
+                and more meaningful.
+
+                Your smile, your kindness, your presence,
+                and even the little things you do are things
+                that I truly appreciate.
+
+                Thank you for being part of my life.
+                Thank you for all the memories,
+                the laughs, and the moments we share.
+
+                No matter what happens,
+                you'll always have a special place in my heart.
+
+                ❤️
             </p>
+
         </div>
+
+    </div>
     `;
 });
 
