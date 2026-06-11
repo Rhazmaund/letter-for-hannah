@@ -11,12 +11,28 @@ let firstMove = true;
 
 // OPEN ENVELOPE
 if(openLetter){
+
     openLetter.addEventListener("click", () => {
 
-        envelopePage.style.display = "none";
-        mainPage.style.display = "block";
+        openLetter.classList.add("match-cut");
+
+        setTimeout(() => {
+
+            envelopePage.style.opacity = "0";
+
+            setTimeout(() => {
+
+                envelopePage.style.display = "none";
+
+                mainPage.style.display = "block";
+                mainPage.classList.add("popup-enter");
+
+            },300);
+
+        },500);
 
     });
+
 }
 
 // YES BUTTON
