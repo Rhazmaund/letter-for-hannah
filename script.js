@@ -38,55 +38,53 @@ if(openLetter){
 // YES BUTTON
 yesBtn.addEventListener("click", () => {
 
-    document.body.innerHTML = `
-    <div class="love-window">
+    mainPage.classList.add("window-exit");
 
-        <div class="love-title">
-            <span>HANNAH</span>
+    setTimeout(() => {
 
-            <div class="pixel-hearts">
-                ❤ • ❤ • ❤
+        document.body.innerHTML = `
+        <div class="love-window letter-enter">
+
+            <div class="love-title">
+                <span>HANNAH</span>
+
+                <div class="pixel-hearts">
+                    ❤ • ❤ • ❤
+                </div>
             </div>
-        </div>
 
-        <div class="love-content">
+            <div class="love-content">
 
-            <h2>My Love,</h2>
+                <h2>For Hannah,</h2>
 
-            <p>
-                Dear Hannah,
+                <p>
+                    Dear Hannah,
 
-                Thank you for taking the time to read this letter.
-                I just wanted you to know how special you are to me.
+                   I just want to say sorry for everything na pinakita o pinaramdam ko sayo nung mga nakaraan. hindi ko siya sadyang gawin sayo na para kitang minamadali sa isang relasyon. Hindi sa nag eexpect ako or what pero sabi ko nga na nasanay lang talaga ako maging ganon. hindi sa tipong sayo nalang umiikot yung mundo ko pero ganon lang talaga yung way ng kung how ko napapakita na show yung tipong ako. Yes, alam kong kailangan kong paghirapan at patunayan na karapat-dapat ako sa tiwala at pagmamahal mo. pero nag kulang talaga ako sa adjustment sa pinapakita ko or inaact ko as your man. Im sorry if hindi ako nag adjust kaya napagod ka dahil sakin, hindi ikaw yung mga reasona ng heavy heart ko, hindi ko gustong iparamdam sayo. Im so sorry if naffeel mo or nakokikita mo sa perspective mo na ni rrush kita sa lahat ng bagay. <br></br>
 
-                Every day you make my life brighter, happier,
-                and more meaningful.
 
-                Your smile, your kindness, your presence,
-                and even the little things you do are things
-                that I truly appreciate.
+ I just wanted you to know how special you are to me. Even the little things you do are things that I truly appreciate. Thank you for being part of my life, memories and the moments we share. No matter what happens, you'll always have a special place in my heart.<br></br>
 
-                Thank you for being part of my life.
-                Thank you for all the memories,
-                the laughs, and the moments we share.
 
-                No matter what happens,
-                you'll always have a special place in my heart.
+Ginawa ko tong letter para masabi sa’yo na naiintindihan ko na ngayon kung bakit ka napagod. Dahil sa space na binigay natin sa isa’t isa, narealize ko yung mga bagay na kailangan kong baguhin at i-improve sa sarili ko. Hindi ko inaasahan na maniwala ka agad sa mga sinasabi ko, pero gusto kong ipakita sa pamamagitan ng actions ko na kaya kong respetuhin ang pace na komportable ka. Hindi kita mamadaliin at gusto kong maging mas maayos na tao para sa sarili ko at para sa atin. I won’t rush you anymore. Ang gusto ko ngayon ay mabuo ulit ang tiwala at comfort mo sa akin sa tamang panahon. Naiintindihan ko na hindi lahat ng bagay kailangang madaliin, at handa akong respetuhin kung ano man ang pace na kailangan mo. I miss you, Hannah. Pero naiintindihan ko rin na kailangan nating bigyan ng oras ang mga bagay para maging maayos.  Thank you dahil naisip mong magbigay muna tayo ng space. Dahil doon, mas nakita at naintindihan ko yung mga bagay na hindi ko napapansin noon, lalo na yung mga pagkakataong napapagod ka na pala dahil sa mga ginagawa ko. sorry if nung una is ayoko pa tanggapin kasi takot talaga ako na mawala ka sakin, kaya mas naisip ko nalang na intindiihin and irespeto yung sinabi mo para din naman satin to.<br></br>
 
-                ❤️
-            </p>
+
+Enjoy your birthday hannah.  Gusto ko maging special yung day mo at sana maging masaya ka sa birthday mo. Simula ngayon, gusto kong hayaan na ang mga actions ko ang magsalita para sa akin. Patuloy pa rin akong mag-eeffort at ipapakita sa’yo ang sincerity ko, pero sa paraan na hindi ka mapo-pressure at komportable ka
+                </p>
+
+            </div>
 
         </div>
+        `;
 
-    </div>
-    `;
+    },700);
+
 });
 
 // NO BUTTON
 function moveNoButton(){
 
     noClicked = true;
-
     warning.textContent = "";
 
     if(firstMove){
@@ -94,8 +92,26 @@ function moveNoButton(){
         firstMove = false;
     }
 
-    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    const rect = noBtn.getBoundingClientRect();
+
+    const buttonWidth = rect.width;
+    const buttonHeight = rect.height;
+
+    const padding = 15;
+
+    const maxX = window.innerWidth - buttonWidth - padding;
+    const maxY = window.innerHeight - buttonHeight - padding;
+
+    const minX = padding;
+    const minY = padding;
+
+    const x = Math.floor(
+        Math.random() * (maxX - minX)
+    ) + minX;
+
+    const y = Math.floor(
+        Math.random() * (maxY - minY)
+    ) + minY;
 
     noBtn.style.left = x + "px";
     noBtn.style.top = y + "px";
